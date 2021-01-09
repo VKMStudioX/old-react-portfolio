@@ -212,11 +212,6 @@ export const StoreProvider = ({ children }) => {
                 dividerKeywords: 'if you are interessted to any form of cooperation with me, there is a some contact listed below.',
                 listIcons: [
                     {
-                      listIcon: 'call',
-                      listHeader: '+48 696-913-016',
-                      listDescr: "If you want to call me, there is telephone number in Poland",
-                    },
-                    {
                       listIcon: 'mail',
                       listHeader: 'meact@wp.pl',
                       listDescr: "If you want to mail me, there is mail adress in Wirtualna Polska domain. Or you can directly send a message with a form on a right side ->", 
