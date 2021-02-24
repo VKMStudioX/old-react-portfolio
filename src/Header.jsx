@@ -29,7 +29,6 @@ const Header = (props) => {
   const toggleDropdown = () => setOpen(!dropdownOpen);
 
   return (
-    <div>
       <Navbar color="secondary" dark expand="md" sticky>
         <NavbarBrand><img src={VKM_Logo} alt="logo" height="54" /></NavbarBrand>
         <NavbarToggler onClick={toggle} />
@@ -74,7 +73,6 @@ const Header = (props) => {
           <NavbarText><Badge color="primary"><h5 style={{ verticalAlign: 'middle'}}>Portfolio</h5></Badge></NavbarText>
         </Collapse>
       </Navbar>
-    </div>
   );
 }
 

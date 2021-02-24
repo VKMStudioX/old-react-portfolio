@@ -1,79 +1,104 @@
 import React, { useContext } from 'react';
 import { StoreContext } from '../Store/StoreProvider';
-import { Grid, Segment, Icon, List, Header, Divider, Label } from 'semantic-ui-react';
+import { Grid, Segment, Icon, List, Header, Divider, Card } from 'semantic-ui-react';
 
-import LabelItems from '../components/LabelItems'
 import ListItems from '../components/ListItems'
+import CardGroupItems from '../components/CardGroupItems'
+
+import { InlineIcon as IconifyInlineIcon } from '@iconify/react';
+import mongodbIcon from '@iconify-icons/logos/mongodb';
+import expressIcon from '@iconify-icons/logos/express';
+import nodejsIcon from '@iconify-icons/logos/nodejs';
+import reactIcon from '@iconify-icons/logos/react';
+import reduxIcon from '@iconify-icons/logos/redux';
+import reactRouter from '@iconify-icons/logos/react-router';
+import sassIcon from '@iconify-icons/logos/sass';
+import nodeRed from '@iconify-icons/cib/node-red';
+import html5Icon from '@iconify-icons/cib/html5';
+import css3Shiled from '@iconify-icons/cib/css3-shiled';
+import javascriptIcon from '@iconify-icons/logos/javascript';
+import vueIcon from '@iconify-icons/logos/vue';
+
 
 const SkillsSui = () => {
 
-    const  { skills, aboutMe } = useContext(StoreContext);
+    const  { aboutMe } = useContext(StoreContext);
 
-    const projects = skills
+    const iconifyIconsList = [
+      {name: mongodbIcon,      color:'' },
+      {name: expressIcon,      color:'' },
+      {name: reactIcon,        color:'' },
+      {name: nodejsIcon,       color:'' },
+      {name: reduxIcon,        color:'' },
+      {name: reactRouter,      color:'' },
+      {name: javascriptIcon,   color:'' },
+      {name: nodeRed,          color:'red' },
+      {name: html5Icon,        color:'#e34c26' },
+      {name: css3Shiled,       color:'#264de4' },
+      {name: sassIcon,         color:'' },
+      {name: vueIcon,          color:'' },
+    ]
 
-    const ProjectContent = (
-        <Grid columns={2} divided inverted stackable padded='very'>
-          <Grid.Row>
-            <Grid.Column inverted color='black'>
+    const iconifyHeight = '7.4vh'
+
+    const skillsContent = (
+      <>
+        <Grid inverted stackable padded centered vertical>
+
+        <Grid.Row>
+            <Grid.Column widescreen={13}>
               <Grid.Row divided>
-
-                <Header inverted color='violet' as='h2'>
+                <Header inverted color='grey' as='h2'>
                   <Icon name={aboutMe.headerIcon} />
-                  <Header.Content>{aboutMe.headerContent}</Header.Content>
+                <Header.Content>
+                  {aboutMe.headerContent}
+                </Header.Content>
                 </Header> 
-
-              </Grid.Row>
-               <Grid.Row>
-
-                <Divider horizontal inverted>Info</Divider>
-                  <Header as="h2" inverted color='white'>{aboutMe.dividerKeywords[0]} <br/>
-                  </Header>
-                  <Header as="h3" inverted color='white'>{aboutMe.dividerKeywords[1]} <br/>
-                                                         {aboutMe.dividerKeywords[2]} <br/>
-                                                         {aboutMe.dividerKeywords[3]} <br/>
-                                                         {aboutMe.dividerKeywords[4]} <br/> 
-                  </Header>
-                  <Label.Group tag size="large">
-                    <LabelItems
-                      LabelItemsProps={aboutMe.labelItems} />
-                  </Label.Group>
-
-
-              </Grid.Row>
-            </Grid.Column>
-
-            <Grid.Column inverted color='black'>
-              <Grid.Row divided>
-
-                <Header inverted color='violet' as='h2'>
-                  <Icon name={projects.headerIcon} />
-                <Header.Content>{projects.headerContent}</Header.Content>
-                </Header> 
-
               </Grid.Row>
               <Grid.Row>
-
-                <Divider horizontal inverted>Skills</Divider>
-                  {projects.dividerKeywords} 
-                    <List inverted animated celled selection size="big">
-                      <ListItems 
-                        ListItemsProps={skills}
-                      />
+                <Divider horizontal inverted>SHort BReifing of my work-life</Divider>
+                    <List inverted animated celled selection size="big" floated="right" className='text'> 
+                      <ListItems ListItemsProps={aboutMe} />
+                      <List.Item>
+                      <Card fluid centered className='skillsCardITTechnology' >
+                        <Card.Content>
+                          {iconifyIconsList.map((icon) =>  <IconifyInlineIcon key={icon.name} icon={icon.name} className='iconifyIcon' height={iconifyHeight} color={icon.color} />)}
+                        </Card.Content>
+                      </Card>
+                      </List.Item>
                     </List>
-
+                    
                 </Grid.Row>
             </Grid.Column>
-            
-          </Grid.Row> 
+          </Grid.Row>
+
+          <Grid.Row >
+            <Grid.Column widescreen={13}>
+              <Grid.Row divided>
+                <Header inverted color='grey' as='h2'>
+                  <Icon name={aboutMe.cardHeaderIcon} />
+                  <Header.Content>{aboutMe.cardHeaderContent}</Header.Content>
+                </Header> 
+              </Grid.Row>
+               <Grid.Row>
+                <Divider horizontal inverted>Tags</Divider>     
+                  <Card.Group centered stackable>     
+                    <CardGroupItems CardItemsProps={aboutMe.cardItems} />
+                  </Card.Group>   
+              </Grid.Row>
+            </Grid.Column>
+            </Grid.Row>
+
       </Grid>
+      </>
       )
 
 
     return (
 <>
 
-<Segment inverted color='black' vertical padded="very"> 
-{ProjectContent}
+<Segment vertical padded='very'> 
+{skillsContent}
 </Segment> 
 
 </>

@@ -6,12 +6,21 @@ import pcoweb3 from '../img/pcoweb3.png'
 import pcoweb4 from '../img/pcoweb4.png'
 import pcoweb5 from '../img/pcoweb5.png'
 import pcoweb6 from '../img/pcoweb6.png'
+import pcoweb7 from '../img/pcoweb7.png'
+import pcoweb8 from '../img/pcoweb8.png'
 import hmi1 from '../img/hmi1.png'
 import hmi2 from '../img/hmi2.png'
 import hmi3 from '../img/hmi3.png'
 import hmi4 from '../img/hmi4.png'
 import hmi5 from '../img/hmi5.png'
 import hmi6 from '../img/hmi6.png'
+import ds1 from '../img/ds1.png'
+import ds2 from '../img/ds2.png'
+import ds3 from '../img/ds3.png'
+import vue1 from '../img/vue1.png'
+import vue2 from '../img/vue2.png'
+import vue3 from '../img/vue3.png'
+import vue4 from '../img/vue4.png'
 
 export const StoreContext = createContext();
 
@@ -24,6 +33,8 @@ export const StoreProvider = ({ children }) => {
         { src: pcoweb4, altText: 'Wizualizacja - pCOWeb' },
         { src: pcoweb5, altText: 'Wizualizacja - pCOWeb' },
         { src: pcoweb6, altText: 'Wizualizacja - pCOWeb' },
+        { src: pcoweb7, altText: 'Wizualizacja - pCOWeb' },
+        { src: pcoweb8, altText: 'Wizualizacja - pCOWeb' },
       ]
 
      const hmiImagesState = [
@@ -34,6 +45,58 @@ export const StoreProvider = ({ children }) => {
         { src: hmi5,    altText: 'Wizualizacja - hmi'    },
         { src: hmi6,    altText: 'Wizualizacja - hmi'    },
       ]
+
+      const desertShopImagesState = [
+        { src: ds1,    altText: 'Wizualizacja - desert shop'    },
+        { src: ds2,    altText: 'Wizualizacja - desert shop'    },
+        { src: ds3,    altText: 'Wizualizacja - desert shop'    },
+      ]
+
+      const vueImagesState = [
+        { src: vue1,    altText: 'Wizualizacja - vue'    },
+        { src: vue2,    altText: 'Wizualizacja - vue'    },
+        { src: vue3,    altText: 'Wizualizacja - vue'    },
+        { src: vue4,    altText: 'Wizualizacja - vue'    },
+      ]
+      const desertShopProjectsState =
+        {
+          headerIcon: 'shop',
+          headerContent: 'Desert Shop',
+          dividerKeywords: 'This is the MERN Stack project represent the music shop with top albums of 2020 year in stoner/psychedelic/pagan folk genres',
+          listIcons: [
+              {
+                listIcon: 'database',
+                listHeader: 'MongoDB',
+                listDescr: 'MongoDB (non-related database) for storing the products, orders and users', 
+              },
+              {
+                listIcon: 'node',
+                listHeader: 'Express',
+                listDescr: 'express.js for server scripts (back-end for this project)', 
+              },
+              {
+                listIcon: 'react',
+                listHeader: 'React',
+                listDescr: 'A javascript library for front-end to this project', 
+              }, 
+              {
+                listIcon: 'node js',
+                listHeader: 'Node.js',
+                listDescr: 'A javascript environment for running this entire project', 
+              },  
+              {
+                listIcon: 'sass',
+                listHeader: 'Sass',
+                listDescr: 'Sass is the preprocessor of CSS, for the visual styles of the site', 
+              },            
+                    ],
+          isAddDivider: true,
+          addDividerKeywords: 'Live Desert Shop',
+          addListIcon: 'react',
+          addListHeader: 'React',
+          addListDescr: ['There is a live project on the herokuapp server, including the technologies listed above'],
+          addDividerLink: 'http://desert-shop.herokuapp.com/',
+        }
 
      const pCOWebProjectsState =
         {
@@ -57,16 +120,27 @@ export const StoreProvider = ({ children }) => {
                 listDescr: 'CSS used for styling elements', 
               },
               {
+                listIcon: 'sass',
+                listHeader: 'Sass',
+                listDescr: 'Sass is the preprocessor of CSS, for the visual styles of the site (in React version)', 
+              },            
+              {
                 listIcon: 'js',
                 listHeader: 'JavaScript',
                 listDescr: 'VanillaJS & jQuery for manipulate the data , AJAX for read/write data from/to PLC(pCOWeb Card)', 
-              },        
+              }, 
+              {
+                listIcon: 'react',
+                listHeader: 'React',
+                listDescr: 'In some pCOWebs, there are the new technology, react & sass version', 
+              },               
                     ],
           isAddDivider: true,
-          addDividerKeywords: 'Live React Demo',
+          addDividerKeywords: 'Live React visualization',
           addListIcon: 'react',
           addListHeader: 'React',
-          addListDescr: ['I have prepared (in my house) the PLC with modern visualization based on the newest technologies like:','- Node-RED for backend (with Modbus-RTU RS-485 communication for data fetching)', ' - ReactJS with React-Router< framework for frontend.', 'Please contact me if you interessted to see source and how it works.']
+          addListDescr: ['There is the newest version of the visualization with technologies like:',' - ReactJS for frontent framework, with React-Router library for navigation', '- Sass (CSS preprocessor) for more elastic and efficiency Cascading style sheets'],
+          addDividerLink: 'http://176.123.60.10:6680/http/build/',
         }
 
         const hmiProjectsState =
@@ -93,116 +167,131 @@ export const StoreProvider = ({ children }) => {
           addListDescr: ''
         }
 
-
-        const skillsState =
+        const vueProjectsState =
         {
-          headerIcon: 'wrench',
-          headerContent: 'Skills & Experiences',
-          dividerKeywords: 'Some of posible usefeul skills which I have for you and yours work are listed below.',
+          headerIcon: 'tablet alternate',
+          headerContent: 'Visualization - Boiler control',
+          dividerKeywords: 'Visualization of control of Boiler - i.e. beer making process, about Siemens S7-1200 programmable controller, Node-RED for Back-end and Vue.js+bootstrap on Front-end.',
           listIcons: [
-              {
-                listIcon: 'tablet alternate',
-                listHeader: 'Visualization of control processes like HVAC, transportation, or other items manipulation',
-                listDescr: "I'm experienced with VIPA panels, Carel pGDT Touch panels, web visualization at pCOWeb systems",
-              },
-              {
-                listIcon: 'computer',
-                listHeader: 'Web & Mobile applications',
-                listDescr: "I've used some technologies and frameworks like HTML, CSS, Javascript, jQuery, React (with Router, Material-UI, Semantic-UI, and many other plugins), Vue, Bootstrap, Sass, Node-RED,", 
-              },
-              {
-                listIcon: 'microchip',
-                listHeader: 'PLC programming',
-                listDescr: 'I have kinda experience with programming of PLC machines like Siemens S7-200/300/1200, EATON Easy or Mitsubishi FX. In Addition, I can easy learn how to use the environment of any new proggrammable controller if I needed to.', 
-              },
-              {
-                listIcon: 'tags',
-                listHeader: 'Quality assurance and tests',
-                listDescr: "I've manually tested many applications used in HVAC environment, comparing the funcionality of programmable controlles with the company standards and the clients guidelines(assumptions) and/or documentation", 
-              },   
-              {
-                listIcon: 'key',
-                listHeader: 'Designing automation systems',
-                listDescr: "I have much experience in Computer-Aided Designing for automation systems, like a AutoCAD, PCSchematic(a program like EPLAN). Making an technical documentation (DTR) from zero to end.",
-              },   
-              {
-                listIcon: 'laptop',
-                listHeader: 'Computers, office devices, network and graphic issuses',
-                listDescr: "I have some experience with computers, starting from assembling the PC from the parts (e.g. CPU or RAMs), through the using the computers (e.g. MS Windows, MS Office, Internet Viewers, GIMP/Photoshop/Inkscape for graphics, configuring the networks and routers), office and industrial devices like printers, marker printers too, ending to developing the code in MS Visual Studio or Brackets.", 
-              },   
-              {
-                listIcon: 'legal',
-                listHeader: 'Manually skills',
-                listDescr: "I know how to use the tools, including power tools, and know some techniques to do manual things, for example assembling the automation or... simply kitchen, cabinets :P ", 
-              },   
-              {
-                listIcon: 'user circle',
-                listHeader: 'Foreign tongues',
-                listDescr: "My mother tongue is polish, but I know english in a enough level to understanding the technical docuemtation of devices and frameworks", 
-              },   
-
+            {
+              listIcon: 'microchip',
+              listHeader: 'Siemens S7-1200',
+              listDescr: 'The PLC for controlling the heating system of the beer boiler',
+            },
+            {
+              listIcon: 'code branch',
+              listHeader: 'Node-RED',
+              listDescr: 'Node-RED is a back-end platform which support industrial communication protocols - i.e S7-Connection with Siemens S7-1200 to obtain a data for control and monitoring.',
+            },
+            {
+              listIcon: 'vuejs',
+              listHeader: 'Vue.js',
+              listDescr: 'Node-RED also provides the UI-builder (comes with Vue.js and Bootstrap Front-end libraries) which was used to visualise the beer making process.', 
+            },
                     ],
           isAddDivider: false,
           addDividerKeywords: '',
           addListIcon: '',
           addListHeader: '',
-          addListDescr: '',
-              }
+          addListDescr: ''
+        }
 
               const aboutMeState =
               {
                 headerIcon: 'spy',
-                headerContent: 'Information - About me',
-                dividerKeywords: [
-                    "Hi! I'm Krzysztof Meyer and I'm aspire to be front-end developer, and this is my Portfolio.",
-                    "You can see there a litle sight of my works of years in companies when I worked after studies, and, there are also newest projects in modern technologies (React, Vue, Node-RED).",
-                    "Some years ago, i finished the engineers and master studys in electro-automation, and i worked in this, in HVAC industry section, but I decided to change work in my life so... let's go, IT waits!",
-                    "Why? Because... I had satisfaction in making a visualization of automation processes, what, in short, is a kind of front-end develompent (with a back-end from programming controller's hardware and software), not exactly the same actual technology, but still yes",
-                    "So, here I am, the visualizations of my web had HTML/CSS/JS, so I know something about this, and, I learned more and more... and, maybe, more enough to start the new work? new Adventures and, hehe, new Problems?"
+                headerContent: "Hi!, I'm Krzysztof Meyer and this is my Portfolio.",
+                listIcons: [
+                  {
+                    listIcon: 'folder open',
+                    listHeader: 'Site Content',
+                    listDescr: "You can see there some projects which I create in companies when I worked after studies (for HVAC environment), and, there are also my personal-training-useful newest projects in modern technologies (React, Vue, Node-RED, Node.js, Express, MongoDB, Sass).", 
+                  },   
+                     {
+                    listIcon: 'student',
+                    listHeader: 'Education & Experience',
+                    listDescr:  "Some years ago, I finished the engineer and master grade studys in electro-automation, and I worked in this, in HVAC industry section, but I decided to change work in my life so... let's go, IT waits!",
+                  },   
+                     {
+                    listIcon: 'terminal',
+                    listHeader: 'Perspectives and...',
+                    listDescr:  "Why? Because I had a great satisfaction in making a visualization of automation processes, what, in short, is a kind of front-end develompent (with a back-end from programmable controller - PLC), not exactly the same actual technology, but... still the same philosophy",
+                  },   
+                     {
+                    listIcon: 'code',
+                    listHeader: '...the new life-road?',
+                    listDescr: "So, here I am, the visualizations of my web had HTML/CSS/JS, so I know something about this, and, I learned more and more... and, maybe, more enough to start the new work? new Adventures and, hehe, new Problems?"
+                  },   
+                        ],
+
+
+                cardHeaderIcon: 'wrench',
+                cardHeaderContent: 'Skills / Abilities / Technologies',
+                cardItems: [
+                  { cardItemName: 'Automation',
+                    cardItemClassName: 'skillsCardAutomation',
+                    cardItemHeaderIsInverted: true,
+                    cardItemIconName: 'cogs',
+                    cardLabelItems: [
+                                      { labelIcon: 'cog', labelColor: 'black', labelName: "Siemens S7", },
+                                      { labelIcon: 'microchip', labelColor: 'black', labelName: "S7-200",  },
+                                      { labelIcon: 'microchip', labelColor: 'black', labelName: "S7-300",  },
+                                      { labelIcon: 'microchip', labelColor: 'black', labelName: "S7-1200", },
+                                      { labelIcon: 'microchip', labelColor: 'black', labelName: "VIPA", },
+                                      { labelIcon: 'cog', labelColor: 'black', labelName: "Mitsubishi FX", },
+                                      { labelIcon: 'cog', labelColor: 'black', labelName: "Carel pCO", },
+                                      { labelIcon: 'microchip', labelColor: 'black', labelName: "pCOWeb", },
+                                      { labelIcon: 'microchip', labelColor: 'black', labelName: "pGDTouch", },
+                                    ],
+                  },
+                  { cardItemName: 'Inverters',
+                    cardItemClassName: 'skillsCardInverters',
+                    cardItemHeaderIsInverted: true,
+                    cardItemIconName: 'lightning',
+                    cardLabelItems: [
+                                      { labelIcon: 'power cord',labelColor: 'teal', labelName: "Lenze i510/550", },
+                                      { labelIcon: 'power cord',labelColor: 'teal', labelName: "ABB ACS310", },
+                                      { labelIcon: 'power cord',labelColor: 'teal', labelName: "EURA E800", },
+                                      { labelIcon: 'power cord',labelColor: 'teal', labelName: "LG iG5A/iC5A",},
+                                    ],
+                  },
+                  { cardItemName: 'IT Technology',
+                    cardItemClassName: 'skillsCardITTechnology',
+                    cardItemHeaderIsInverted: false,
+                    cardItemIconName: 'mobile alternate',
+                    cardLabelItems: [
+                                      { labelIcon: 'html5', labelColor: 'violet', labelName: "HTML", },
+                                      { labelIcon: 'css3', labelColor: 'violet', labelName: "CSS", },
+                                      { labelIcon: 'js', labelColor: 'violet', labelName: "JavaScript", },
+                                      { labelIcon: 'react', labelColor: 'violet', labelName: "React", },
+                                      { labelIcon: 'vuejs', labelColor: 'violet', labelName: "VueJS", },
+                                      { labelIcon: 'code branch', labelColor: 'violet', labelName: "Node-RED", },
+                                      { labelIcon: 'database', labelColor: 'violet', labelName: "MongoDB", },
+                                      { labelIcon: 'node', labelColor: 'violet', labelName: "Node.js", },
+                                      { labelIcon: 'node js', labelColor: 'violet', labelName: "Express.js", },
+                                    ],
+                  },
+                  { cardItemName: "CAD's & Others",
+                    cardItemClassName: 'skillsCardCADs',
+                    cardItemHeaderIsInverted: true,
+                    cardItemIconName: 'computer',
+                    cardLabelItems: [
+                                      { labelIcon: 'crop', labelColor: 'purple', labelName: "AutoCAD", },
+                                      { labelIcon: 'crop', labelColor: 'purple', labelName: "PC Schematic", },
+                                      { labelIcon: 'crop', labelColor: 'purple', labelName: "SEE Electrical", },
+                                      { labelIcon: 'crop', labelColor: 'purple', labelName: "EPLAN", },
+                                    ],
+                  },
+                  { cardItemName: 'Personal Skills',
+                    cardItemClassName: 'skillsCardOthers',
+                    cardItemHeaderIsInverted: true,
+                    cardItemIconName: 'compose',
+                    cardLabelItems: [
+                                      { labelIcon: 'user', labelColor: 'brown', labelName: "Analytic thinking", },
+                                      { labelIcon: 'user plus', labelColor: 'brown', labelName: "Fast learning", },
+                                      { labelIcon: 'user plus', labelColor: 'brown', labelName: "Ambition", },
+                                    ],
+                  }
                 ],
-                labelItems: [
-                  { labelIcon: 'cogs', labelColor: 'blue', labelName: "Automation", },
-                  { labelIcon: 'cog', labelColor: 'blue', labelName: "Siemens S7", },
-                  { labelIcon: 'microchip', labelColor: 'blue', labelName: "S7-200",  },
-                  { labelIcon: 'microchip', labelColor: 'blue', labelName: "S7-300",  },
-                  { labelIcon: 'microchip', labelColor: 'blue', labelName: "S7-1200", },
-                  { labelIcon: 'microchip', labelColor: 'blue', labelName: "VIPA", },
-                  { labelIcon: 'cog', labelColor: 'blue', labelName: "Mitsubishi FX", },
-                  { labelIcon: 'cog', labelColor: 'blue', labelName: "Carel pCO", },
-                  { labelIcon: 'microchip', labelColor: 'blue', labelName: "pCOWeb", },
-                  { labelIcon: 'microchip', labelColor: 'blue', labelName: "pGDTouch (pGDT)", },
-                  
-                  { labelIcon: 'lightning',labelColor: 'teal', labelName: "Inverters", },
-                  { labelIcon: 'power cord',labelColor: 'teal', labelName: "Lenze i510/550", },
-                  { labelIcon: 'power cord',labelColor: 'teal', labelName: "ABB ACS310", },
-                  { labelIcon: 'power cord',labelColor: 'teal', labelName: "EURA E800", },
-                  { labelIcon: 'power cord',labelColor: 'teal', labelName: "LG iG5A/iC5A",},
-
-                  { labelIcon: 'mobile alternate', labelColor: 'violet', labelName: "IT Technology", },
-                  { labelIcon: 'html5', labelColor: 'violet', labelName: "HTML", },
-                  { labelIcon: 'css3', labelColor: 'violet', labelName: "CSS", },
-                  { labelIcon: 'js', labelColor: 'violet', labelName: "JavaScript", },
-                  { labelIcon: 'react', labelColor: 'violet', labelName: "React", },
-                  { labelIcon: 'vuejs', labelColor: 'violet', labelName: "VueJS", },
-                  { labelIcon: 'code branch', labelColor: 'violet', labelName: "Node-RED", },
-                  
-                  { labelIcon: 'computer', labelColor: 'purple', labelName: "CAD's", },
-                  { labelIcon: 'crop', labelColor: 'purple', labelName: "AutoCAD", },
-                  { labelIcon: 'crop', labelColor: 'purple', labelName: "PC Schematic", },
-                  { labelIcon: 'crop', labelColor: 'purple', labelName: "SEE Electrical", },
-                  { labelIcon: 'crop', labelColor: 'purple', labelName: "EPLAN", },
-
-                  { labelIcon: 'compose', labelColor: 'brown', labelName: "Other skills", },
-                  { labelIcon: 'user', labelColor: 'brown', labelName: "Analytic thinking", },
-                  { labelIcon: 'user plus', labelColor: 'brown', labelName: "Fast learning", },
-                  { labelIcon: 'user plus', labelColor: 'brown', labelName: "Ambition", },
-                  
-                  { labelIcon: 'microphone', labelColor: 'grey', labelName: "Tongues", },
-                  { labelIcon: 'microphone', labelColor: 'grey', labelName: "Polish", },
-                  { labelIcon: 'microphone', labelColor: 'grey', labelName: "English", },
-
-                  
-                ]
               }
 
               const contactState =
@@ -213,13 +302,13 @@ export const StoreProvider = ({ children }) => {
                 listIcons: [
                     {
                       listIcon: 'mail',
-                      listHeader: 'meact@wp.pl',
-                      listDescr: "If you want to mail me, there is mail adress in Wirtualna Polska domain. Or you can directly send a message with a form on a right side ->", 
+                      listHeader: 'vkmstudiox@gmail.com',
+                      listDescr: "If you want to mail me, there is mail adress in Google domain. Or you can directly send a message with a form below this section.", 
                     },
                     {
-                      listIcon: 'facebook',
-                      listHeader: 'fb.com/vkmstudio',
-                      listDescr: 'There is my facebook fanpage. You should like it! Or you can, simply, message me.', 
+                      listIcon: 'mail',
+                      listHeader: 'meact@wp.pl',
+                      listDescr: 'If you want a polish mail, in Wirtualna Polska, you are welcome', 
                     },
                           ],
 
@@ -248,47 +337,50 @@ export const StoreProvider = ({ children }) => {
                       message: '4',
                           }
 
-
+   
+    
+    const [desertShopImages, setDesertShopWebImages] = useState(desertShopImagesState);
     const [pCOWebImages, setPCOWebImages] = useState(pCOWebImagesState);
     const [hmiImages, setHmiImages] = useState(hmiImagesState);
+    const [vueImages, setVueImages] = useState(vueImagesState);
+
+    const [desertShopProjects, setDesertShopProjects] = useState(desertShopProjectsState);
     const [pCOWebProjects, setPCOWebProjects] = useState(pCOWebProjectsState);
     const [hmiProjects, setHmiProjects] = useState(hmiProjectsState);
+    const [vueProjects, setVueProjects] = useState(vueProjectsState);
 
-    const [skills, setSkills] = useState(skillsState);
     const [aboutMe, setAboutMe] = useState(aboutMeState);
 
     const [contact, setContact] = useState(contactState);
     const [contactFormInfo, setContactFormInfo] = useState(contactFormInfoState);
 
     const [contactForm, setContactForm] = useState(contactFormState);
-
+  
     const [ModalOpen, setModalOpen] = useState(false);
     const [ModalImage, setModalImage] = useState('');
 
     const [contactRef, setContactRef] = useState();                    
 
-    console.log(JSON.stringify(aboutMeState));
-
-
-        // useEffect(() => {
-        //     setPCOWebImages(store.pCOWebImages) 
-        //     setHmiImages(store.hmiImages)
-        //     setPCOWebProjects(store.pCOWebProjects)
-        // }, []);
-        
-
 return (
     <StoreContext.Provider value={{
+        desertShopImages, 
+        setDesertShopWebImages,
         pCOWebImages,
         setPCOWebImages,
         hmiImages,
         setHmiImages, 
+        vueImages,
+        setVueImages,
+
+        desertShopProjects,
+        setDesertShopProjects,
         pCOWebProjects,
         setPCOWebProjects,
         hmiProjects,
         setHmiProjects,
-        skills,
-        setSkills,
+        vueProjects,
+        setVueProjects,
+
         aboutMe,
         setAboutMe, 
         contact,

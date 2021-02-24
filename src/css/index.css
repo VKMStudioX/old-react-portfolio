@@ -1,4 +1,145 @@
-.headerbgColor {
-  background-color: "#666";
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.sticky {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 9000 !important;
+}
+
+.text {
+  font-size: 1.4rem !important;
+  color: #40fff5 !important;
+}
+
+.headerMenuBg {
+  background: #6435c9 !important;
+  -webkit-box-shadow: 0 2px 4px 2px rgba(203, 208, 212, 0.15) !important;
+          box-shadow: 0 2px 4px 2px rgba(203, 208, 212, 0.15) !important;
+  padding: 0px !important;
+  margin: none !important;
+  margin-bottom: 10px !important;
+}
+
+.headerMenuBG-transparent {
+  background: rgba(100, 53, 201, 0.75) !important;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15) !important;
+          box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15) !important;
+}
+
+.footerBg {
+  background: rgba(102, 102, 102, 0.5) !important;
+}
+
+.background {
+  background: -webkit-gradient(linear, left top, left bottom, from(#6435c9), to(rgba(102, 102, 102, 0.5))), url("../img/bg-dark-2.jpg") !important;
+  background: linear-gradient(#6435c9, rgba(102, 102, 102, 0.5)), url("../img/bg-dark-2.jpg") !important;
+  padding: 0 !important;
+  margin: none !important;
+  border: 0 !important;
+}
+
+.projectBg {
+  background: rgba(255, 255, 255, 0.75) !important;
+}
+
+.skillsCardAbout {
+  background: rgba(44, 44, 44, 0.75) !important;
+  color: #40fff5 !important;
+  font-size: 1.7rem !important;
+}
+
+.skillsCardAutomation {
+  background: rgba(102, 168, 190, 0.75) !important;
+}
+
+.skillsCardInverters {
+  background: rgba(102, 102, 102, 0.75) !important;
+}
+
+.skillsCardITTechnology {
+  background: rgba(255, 255, 255, 0.75) !important;
+}
+
+.skillsCardCADs {
+  background: rgba(48, 150, 150, 0.75) !important;
+}
+
+.skillsCardOthers {
+  background: rgba(36, 13, 66, 0.75) !important;
+}
+
+.listColor {
+  color: #6435c9;
+}
+
+.cardSegment {
+  background: transparent !important;
+}
+
+.modalImage {
+  top: 300 !important;
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  z-index: 9999 !important;
+}
+
+.iconifyIcon {
+  padding: 5px 0px;
+}
+
+.scrollTop {
+  position: fixed;
+  /* width: 100%; */
+  bottom: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  -webkit-animation: fadeIn 0.3s;
+          animation: fadeIn 0.3s;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+  opacity: 0.5;
+}
+
+.scrollTop:hover {
+  opacity: 1;
+}
+
+.contact {
+  height: auto;
+}
+
+.link-white {
+  color: white;
+}
+
+.header-km {
+  -webkit-transform: translate(40%, 40%);
+          transform: translate(40%, 40%);
+  text-shadow: 1px 0.5px rgba(200, 200, 100, 0.65) !important;
+  -webkit-transition: all .75s ease-in;
+  transition: all .75s ease-in;
+}
+
+.header-km:hover {
+  -webkit-transform: translate(40%, 40%) skewX(25deg) scale3d(1.15, 1.15, 1.15);
+          transform: translate(40%, 40%) skewX(25deg) scale3d(1.15, 1.15, 1.15);
+  text-shadow: 2px 1px rgba(200, 200, 100, 0.65) !important;
 }
 /*# sourceMappingURL=index.css.map */

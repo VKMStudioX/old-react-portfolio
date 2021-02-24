@@ -13,7 +13,7 @@ const Slider = (props) => {
         return (
             
             <div key={item.src} onClick={() => openModal(item.src)}>
-            <img src={item.src} alt={item.altText} style={{opacity: '1', }} />
+            <img src={item.src} alt={item.altText} style={{opacity: '0.75', }} />
             {/* <p className="legend">{item.caption}</p> */}
         </div>
         );

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Grid, Segment, Icon, List, Header, Divider, Accordion } from 'semantic-ui-react';
+import { Grid, Icon, List, Header, Divider, Segment, Accordion } from 'semantic-ui-react';
 import Slider from '../components/Slider2';
+import { Link } from 'react-router-dom';
 
 const SingleProjectSui = ({projects, images}) => {
 
@@ -22,30 +23,30 @@ const SingleProjectSui = ({projects, images}) => {
     const additionalDividerAndItemList = (
         <>
         <Divider horizontal>{projects.addDividerKeywords}</Divider>
-        <List.Item>
-          <Icon name={projects.addListIcon} size='big' />
-          <List.Content>
-            <List.Header>{projects.addListHeader}</List.Header>
-            <List.Description>
-              {projects.addListDescr[0]} <br/>
-              {projects.addListDescr[1]} <br/>
-              {projects.addListDescr[2]} <br/>
-              {projects.addListDescr[3]}
-            </List.Description>
-          </List.Content>
-        </List.Item>
+          <Link to={{ pathname: projects.addDividerLink }} target="_blank">
+            <List.Item>
+              <Icon name={projects.addListIcon} size='big' />
+              <List.Content>
+                <List.Header>{projects.addListHeader}</List.Header>
+                <List.Description>
+                  {projects.addListDescr[0]} <br/>
+                  {projects.addListDescr[1]} <br/>
+                  {projects.addListDescr[2]} <br/>
+                  {projects.addListDescr[3]}
+                </List.Description>
+              </List.Content>
+            </List.Item>
+          </Link>
         </>
     )
 
     const ProjectContent = (
-        <Grid columns={2} divided stackable padded='horizontally' >
+        <Grid columns={1} divided stackable padded='horizontally' >
         <Grid.Row>
         <Grid.Column>
         <Slider
         items = {images}
         /> 
-        </Grid.Column>
-       <Grid.Column>
             <Grid.Row divided>
   </Grid.Row>
     <Divider horizontal>Keywords</Divider>
@@ -79,7 +80,7 @@ const SingleProjectSui = ({projects, images}) => {
     return (
 <>
 
-<Segment padded="very">
+<Segment padded="very" className='projectBg'>
   <Accordion defaultActiveIndex={1} panels={panels} />
 </Segment> 
 

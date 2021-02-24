@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
-import { Grid, Segment, Icon, Menu, Image, Header, Sticky, Responsive, Sidebar, Dropdown } from 'semantic-ui-react'
+import { Grid, Segment, Icon, Menu, Image, Header } from 'semantic-ui-react'
 import { Link } from "react-router-dom";
-import VKM_Logo from '../img/VKM_logo_v4.png';
-import LayoutActivator from './LayoutActivator';
+import VKM_Logo from '../img/VKM_logo_v5.png';
 
 export default class HeaderSui extends Component {
-  state = { activeItem: 'home', menuVisible: false }
-
+  state = { activeItem: '', menuVisible: false }
   
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
@@ -32,14 +30,17 @@ export default class HeaderSui extends Component {
       {
         nameActive: 'GitHub',
         nameIcon: 'github',
-        to: '/github'
+        to: ''
       },
     ]
-
     
   const MenuItems = MenuList.map((item) => {
     return (
-      <Link to={item.to} key={item.nameActive}>
+      <Link 
+       to={item.nameActive === 'GitHub' ? {pathname: 'https://github.com/VKMStudioX'}  : item.to }
+       target={item.nameActive === 'GitHub' ? "_blank" : "_self"}
+       key={item.nameActive}
+      >
         <Menu.Item
           name={item.nameActive}
           active={activeItem === item.nameActive}
@@ -52,58 +53,50 @@ export default class HeaderSui extends Component {
     );
   });
 
-  
+  const menuColor='violet'
 
 
 const MenuHeader = (
-  <Menu icon='labeled' color="violet" inverted borderless floated='right'>
+  <Menu icon='labeled' color={menuColor} inverted borderless floated='right' size='small'> 
 {MenuItems}
       </Menu>
   )
 
   const MenuHeaderMobile = (
-    <Menu icon='labeled' color="violet" inverted borderless floated='right'>
+    <Menu icon='labeled' color={menuColor} inverted borderless floated='right' size='small'>
          <Menu.Item name='Menu' open={this.state.menuVisible} onClick={() => this.setState({ menuVisible: !this.state.menuVisible })}>
           <Icon name='list ul' /></Menu.Item>
         </Menu>
     )
 
+
     return (
       <>
-
-<Grid columns='equal' inverted padded='vertically'>
-<Grid.Row color='violet' textAlign='left'>
+<Grid columns='equal' inverted padded={false} className='sticky'>
+<Grid.Row className='headerMenuBg' textAlign='left' color={menuColor}>
   <Grid.Column> 
-    
-    <Image src={VKM_Logo} alt="logo" width="300" style={{ padding:0, margin:0}} />
-    
+    <Link to='/'><Image src={VKM_Logo} alt="logo" width="275" style={{ padding:0, margin:0}} /></Link>
   </Grid.Column>
   <Grid.Column only='wideScreen largeScreen computer'>
-    <Segment color="violet" inverted>
+    <Segment color={menuColor} inverted padded='vertical'>
     <Header as='h1'>
-    <Header.Content><i>Krzysztof Meyer</i></Header.Content>
-  </Header> Portfolio
+    <Header.Content className="header-km"><i>Krzysztof Meyer - Portfolio</i></Header.Content>
+  </Header> 
     </Segment>
   </Grid.Column>
   <Grid.Column only='wideScreen largeScreen computer'>
-    <Segment color="violet" inverted textAlign='right'>
+    <Segment color={menuColor} inverted textAlign='right'>
       {MenuHeader}
     </Segment>
   </Grid.Column>
   <Grid.Column only='mobile tablet'>
-    <Segment color="violet" inverted textAlign='right'>
+    <Segment color={menuColor} inverted textAlign='right'>
 {MenuHeaderMobile}
 {this.state.menuVisible ? MenuHeader : null}
     </Segment>
   </Grid.Column>
 </Grid.Row>
 </Grid>
-
-
-<LayoutActivator 
-  active={this.state.activeItem}
-/>
-
 </>
     )
   }
