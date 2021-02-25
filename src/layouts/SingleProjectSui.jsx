@@ -6,11 +6,13 @@ import { Link } from 'react-router-dom';
 const SingleProjectSui = ({projects, images}) => {
 
     const projectsListIcons = projects.listIcons
+    const projectsAddListIcons = projects.addlistIcons
+
     const ListItems = projectsListIcons.map((item) => {
         return (
-            <List.Item key={item.listHeader}>
+            <List.Item key={item.listHeader} className="no-pointer">
             <Icon name={item.listIcon} size='big' />
-            <List.Content>
+            <List.Content className="no-pointer">
               <List.Header>{item.listHeader}</List.Header>
               <List.Description>
               {item.listDescr}
@@ -20,23 +22,24 @@ const SingleProjectSui = ({projects, images}) => {
         );
       });
 
+      const additionalItems = projectsAddListIcons.map((item) => {
+        return (
+            <List.Item key={item.listHeader}> 
+            <Icon name={item.listIcon} size='big' className="link" />
+            <List.Content>
+              <List.Header><Link to={{ pathname: item.listLink }} target="_blank" className="link">{item.listHeader}</Link></List.Header>
+              <List.Description>
+              <Link to={{ pathname: item.listLink }} target="_blank" className="link">{item.listDescr}</Link>
+              </List.Description>
+            </List.Content>
+          </List.Item>
+        )
+      });
+      
     const additionalDividerAndItemList = (
         <>
         <Divider horizontal>{projects.addDividerKeywords}</Divider>
-          <Link to={{ pathname: projects.addDividerLink }} target="_blank">
-            <List.Item>
-              <Icon name={projects.addListIcon} size='big' />
-              <List.Content>
-                <List.Header>{projects.addListHeader}</List.Header>
-                <List.Description>
-                  {projects.addListDescr[0]} <br/>
-                  {projects.addListDescr[1]} <br/>
-                  {projects.addListDescr[2]} <br/>
-                  {projects.addListDescr[3]}
-                </List.Description>
-              </List.Content>
-            </List.Item>
-          </Link>
+        {additionalItems}
         </>
     )
 
@@ -50,7 +53,7 @@ const SingleProjectSui = ({projects, images}) => {
             <Grid.Row divided>
   </Grid.Row>
     <Divider horizontal>Keywords</Divider>
-        {projects.dividerKeywords} 
+        <Header as='h3'>{projects.dividerKeywords}</Header> 
          <List animated  selection size="big">
          {ListItems}
          {projects.isAddDivider === true 

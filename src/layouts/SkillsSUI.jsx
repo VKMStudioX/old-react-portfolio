@@ -25,21 +25,21 @@ const SkillsSui = () => {
     const  { aboutMe } = useContext(StoreContext);
 
     const iconifyIconsList = [
-      {name: mongodbIcon,      color:'' },
-      {name: expressIcon,      color:'' },
-      {name: reactIcon,        color:'' },
-      {name: nodejsIcon,       color:'' },
-      {name: reduxIcon,        color:'' },
-      {name: reactRouter,      color:'' },
-      {name: javascriptIcon,   color:'' },
-      {name: nodeRed,          color:'red' },
-      {name: html5Icon,        color:'#e34c26' },
-      {name: css3Shiled,       color:'#264de4' },
-      {name: sassIcon,         color:'' },
-      {name: vueIcon,          color:'' },
+      {name: mongodbIcon,      color:'',  className:'technologies-grid--1', key:'1'},
+      {name: expressIcon,      color:'',  className:'technologies-grid--2', key:'2' },
+      {name: reactIcon,        color:'',  className:'technologies-grid--3', key:'3' },
+      {name: nodejsIcon,       color:'',  className:'technologies-grid--4', key:'4' },
+      {name: nodeRed,          color:'red',  className:'technologies-grid--5', key:'5' },
+      {name: reduxIcon,        color:'',  className:'technologies-grid--6', key:'6' },
+      {name: reactRouter,      color:'',  className:'technologies-grid--7', key:'7' },
+      {name: javascriptIcon,   color:'',  className:'technologies-grid--8', key:'8' },
+      {name: html5Icon,        color:'#e34c26',  className:'technologies-grid--9', key:'9' },
+      {name: css3Shiled,       color:'#264de4',  className:'technologies-grid--10', key:'10' },
+      {name: sassIcon,         color:'',  className:'technologies-grid--11', key:'11' },
+      {name: vueIcon,          color:'',  className:'technologies-grid--12', key:'12' },
     ]
 
-    const iconifyHeight = '7.4vh'
+    const iconifyHeight = '5vw'
 
     const skillsContent = (
       <>
@@ -56,18 +56,15 @@ const SkillsSui = () => {
                 </Header> 
               </Grid.Row>
               <Grid.Row>
-                <Divider horizontal inverted>SHort BReifing of my work-life</Divider>
+                <Divider horizontal inverted>Short Briefing of my work-life</Divider>
                     <List inverted animated celled selection size="big" floated="right" className='text'> 
                       <ListItems ListItemsProps={aboutMe} />
-                      <List.Item>
-                      <Card fluid centered className='skillsCardITTechnology' >
-                        <Card.Content>
-                          {iconifyIconsList.map((icon) =>  <IconifyInlineIcon key={icon.name} icon={icon.name} className='iconifyIcon' height={iconifyHeight} color={icon.color} />)}
+                    </List>
+                    <Card fluid centered className='skillsCardITTechnology' >
+                        <Card.Content className='technologies-grid'>
+                          {iconifyIconsList.map((icon) =>  <IconifyInlineIcon key={icon.key} icon={icon.name} className={`${icon.className} iconifyIcon`} height={iconifyHeight} color={icon.color} />)}
                         </Card.Content>
                       </Card>
-                      </List.Item>
-                    </List>
-                    
                 </Grid.Row>
             </Grid.Column>
           </Grid.Row>
@@ -81,7 +78,7 @@ const SkillsSui = () => {
                 </Header> 
               </Grid.Row>
                <Grid.Row>
-                <Divider horizontal inverted>Tags</Divider>     
+                <Divider horizontal inverted>Hard Skills</Divider>     
                   <Card.Group centered stackable>     
                     <CardGroupItems CardItemsProps={aboutMe.cardItems} />
                   </Card.Group>   

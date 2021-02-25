@@ -1,6 +1,7 @@
-import React, { useState, useRef, useContext} from 'react';
+import React, { useState, useRef, useContext, useEffect } from 'react';
 import { Form, Input, TextArea, Button, Message, Ref } from 'semantic-ui-react';
 import { StoreContext } from '../Store/StoreProvider';
+import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
 
@@ -21,7 +22,6 @@ const ContactForm = () => {
     emailState.value.includes('@') && emailState.value.includes('.') ? isEmailOK = true : isEmailOK = false
     console.log("isEmailOK: "+isEmailOK);
 
-    
     const handleSubmitForm = (e) => {
         e.preventDefault();
         setContactForm({name: nameState.value, subject: subjectState.value, email: emailState.value, message: messageState.value});
@@ -35,9 +35,36 @@ const ContactForm = () => {
         setSubjectState({value:'', isClicked: false});
         setEmailState({value:'', isClicked: false});
         setMessageState({value:'', isClicked: false});
-        setFormCheckerState({success: true, error: false})
+        setFormCheckerState({success: true, error: false});
     }
 
+      
+useEffect(() => {
+  emailjs.init(process.env.REACT_APP_EMAILJS_USER_ID)
+},[])
+
+    
+  function sendEmail(e) {
+    e.preventDefault();
+       
+    const templateParams =  {
+      name: nameState.value, 
+      subject: subjectState.value, 
+      email: emailState.value, 
+      message: messageState.value
+     }
+
+    emailjs.send(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, templateParams, process.env.REACT_APP_EMAILJS_USER_ID)
+      .then((result) => {
+        setNameState({value:'', isClicked: false});
+        setSubjectState({value:'', isClicked: false});
+        setEmailState({value:'', isClicked: false});
+        setMessageState({value:'', isClicked: false});
+        setFormCheckerState({success: true, error: false});
+      }, (error) => {
+        setFormCheckerState({success: false, error: true});
+      });
+  }
     
 
     
@@ -45,7 +72,7 @@ const ContactForm = () => {
     
     return ( 
         <>
-         <Form inverted color="white" widths="equal" success={formCheckerState.success} error={nameState.value.length > 0 && subjectState.value.length > 0 && emailState.value.length > 0 && messageState.value.length > 0 && !isEmailOK}> 
+         <Form inverted color="white" widths="equal" success={formCheckerState.success} error={formCheckerState.error}> 
                         <Form.Group widths='equal'>
                         <Ref innerRef={nameRef}>
                           <Form.Field
@@ -99,7 +126,7 @@ const ContactForm = () => {
                             id='form-button-control-public'
                             control={Button}
                             content='Send'
-                            onClick ={(e) => {handleSubmitForm(e)}}
+                            onClick ={(e) => {sendEmail(e)}}
                          />
                         </Form.Group>
                         <Message
@@ -110,7 +137,7 @@ const ContactForm = () => {
                         <Message
                             error
                             header='An Error Ocurred'
-                            content='Propably bad e-mail adress.'
+                            content='Propably bad e-mail adress or a mail-server problem'
                         />
                       </Form>
         </>

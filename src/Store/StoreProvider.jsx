@@ -91,11 +91,27 @@ export const StoreProvider = ({ children }) => {
               },            
                     ],
           isAddDivider: true,
-          addDividerKeywords: 'Live Desert Shop',
-          addListIcon: 'react',
-          addListHeader: 'React',
-          addListDescr: ['There is a live project on the herokuapp server, including the technologies listed above'],
-          addDividerLink: 'http://desert-shop.herokuapp.com/',
+          addDividerKeywords: 'Live demo / source code',
+          addlistIcons: [
+                      {
+                        listIcon: 'react',
+                        listHeader: 'React Live Demo',
+                        listDescr: 'There is a live project on the herokuapp server, including the technologies listed above',
+                        listLink: 'http://desert-shop.herokuapp.com/',
+                      },
+                      {
+                        listIcon: 'github',
+                        listHeader: 'Github - client',
+                        listDescr: 'There is the source code of the client-side the above described project, you can see what is all coded.', 
+                        listLink: 'https://github.com/VKMStudioX/desert-shop-client',
+                      },
+                      {
+                        listIcon: 'github',
+                        listHeader: 'Github - server',
+                        listDescr: 'There is the source code of the server-side the above described project, you can see what is all coded.', 
+                        listLink: 'https://github.com/VKMStudioX/desert-shop-server',
+                      },
+                    ]
         }
 
      const pCOWebProjectsState =
@@ -136,11 +152,21 @@ export const StoreProvider = ({ children }) => {
               },               
                     ],
           isAddDivider: true,
-          addDividerKeywords: 'Live React visualization',
-          addListIcon: 'react',
-          addListHeader: 'React',
-          addListDescr: ['There is the newest version of the visualization with technologies like:',' - ReactJS for frontent framework, with React-Router library for navigation', '- Sass (CSS preprocessor) for more elastic and efficiency Cascading style sheets'],
-          addDividerLink: 'http://176.123.60.10:6680/http/build/',
+          addDividerKeywords: 'Live demo / source code',
+          addlistIcons: [
+            {
+              listIcon: 'react',
+              listHeader: 'React Live Demo',
+              listDescr: 'There is the live demo of of the visualization with technologies like: ReactJS  React-Router and Sass',
+              listLink: 'http://176.123.60.10:6680/http/build/',
+            },
+            {
+              listIcon: 'github',
+              listHeader: 'Github',
+              listDescr: 'There is the source code of the above described project, you can see what is all coded.', 
+              listLink: 'https://github.com/VKMStudioX/pcoweb',
+            },
+          ]
         }
 
         const hmiProjectsState =
@@ -161,10 +187,21 @@ export const StoreProvider = ({ children }) => {
             },
                     ],
           isAddDivider: false,
-          addDividerKeywords: '',
-          addListIcon: '',
-          addListHeader: '',
-          addListDescr: ''
+          addDividerKeywords: 'Live demo / source code',
+          addlistIcons: [
+            {
+              listIcon: 'not available',
+              listHeader: 'not available',
+              listDescr: 'not available',
+              listLink: 'not available',
+            },
+            {
+              listIcon: 'not available',
+              listHeader: 'not available',
+              listDescr: 'not available', 
+              listLink: 'not available',
+            },
+          ]
         }
 
         const vueProjectsState =
@@ -190,16 +227,21 @@ export const StoreProvider = ({ children }) => {
             },
                     ],
           isAddDivider: false,
-          addDividerKeywords: '',
-          addListIcon: '',
-          addListHeader: '',
-          addListDescr: ''
+          addDividerKeywords: 'not available',
+          addlistIcons: [
+            {
+              listIcon: 'not available',
+              listHeader: 'not available',
+              listDescr: 'not available',
+              listLink: 'not available',
+            },
+          ]
         }
 
               const aboutMeState =
               {
                 headerIcon: 'spy',
-                headerContent: "Hi!, I'm Krzysztof Meyer and this is my Portfolio.",
+                headerContent: "Hi, my name is Krzysztof and I am seeking for new career adventure. Check my portfolio for more details.",
                 listIcons: [
                   {
                     listIcon: 'folder open',
@@ -281,16 +323,16 @@ export const StoreProvider = ({ children }) => {
                                       { labelIcon: 'crop', labelColor: 'purple', labelName: "EPLAN", },
                                     ],
                   },
-                  { cardItemName: 'Personal Skills',
-                    cardItemClassName: 'skillsCardOthers',
-                    cardItemHeaderIsInverted: true,
-                    cardItemIconName: 'compose',
-                    cardLabelItems: [
-                                      { labelIcon: 'user', labelColor: 'brown', labelName: "Analytic thinking", },
-                                      { labelIcon: 'user plus', labelColor: 'brown', labelName: "Fast learning", },
-                                      { labelIcon: 'user plus', labelColor: 'brown', labelName: "Ambition", },
-                                    ],
-                  }
+                  // { cardItemName: 'Personal Skills',
+                  //   cardItemClassName: 'skillsCardOthers',
+                  //   cardItemHeaderIsInverted: true,
+                  //   cardItemIconName: 'compose',
+                  //   cardLabelItems: [
+                  //                     { labelIcon: 'user', labelColor: 'brown', labelName: "Analytic thinking", },
+                  //                     { labelIcon: 'user plus', labelColor: 'brown', labelName: "Hard working", },
+                  //                     { labelIcon: 'user plus', labelColor: 'brown', labelName: "Ambition", },
+                  //                   ],
+                  // }
                 ],
               }
 
@@ -302,14 +344,14 @@ export const StoreProvider = ({ children }) => {
                 listIcons: [
                     {
                       listIcon: 'mail',
-                      listHeader: 'vkmstudiox@gmail.com',
+                      listHeader: 'VKMStudioX',
                       listDescr: "If you want to mail me, there is mail adress in Google domain. Or you can directly send a message with a form below this section.", 
                     },
-                    {
-                      listIcon: 'mail',
-                      listHeader: 'meact@wp.pl',
-                      listDescr: 'If you want a polish mail, in Wirtualna Polska, you are welcome', 
-                    },
+                    // {
+                    //   listIcon: 'mail',
+                    //   listHeader: 'meact@wp.pl',
+                    //   listDescr: 'If you want a polish mail, in Wirtualna Polska, you are welcome', 
+                    // },
                           ],
 
                 headerMailIcon: 'mail',

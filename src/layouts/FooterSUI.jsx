@@ -10,25 +10,46 @@ return (
   <Grid divided inverted stackable={false}>
     <Grid.Row>
       <Grid.Column width={4} floated='right'>
-        <Header inverted as='h4' content='Sitemap' />
-        <List link inverted>
-          <List.Item as='a'><Link to='/'>Info&Skills</Link></List.Item>
-          <List.Item as='a'><Link to='/projects'>Projects</Link></List.Item>
-         <List.Item as='a'> <Link to='/contact'>Contact</Link></List.Item>
-          <List.Item as='a'><Link to='/github'>GitHub</Link></List.Item>
+        <List link >
+          <List.Item as='a' className='footer-link'>
+            <Link to='/' className='footer-link'>Info&amp;Skills</Link></List.Item>
+          <List.Item as='a' className='footer-link'><Link to='/projects' className='footer-link'>Projects</Link></List.Item>
+         <List.Item as='a' className='footer-link'> <Link to='/contact' className='footer-link'>Contact</Link></List.Item>
+          <List.Item as='a' className='footer-link'><Link to={{pathname: 'https://github.com/VKMStudioX'}}  target='_blank' className='footer-link'>GitHub</Link></List.Item>
         </List>
       </Grid.Column>
-      <Grid.Column width={8} floated='left'>
-        <Header as='h4' inverted>
+      <Grid.Column width={8}  floated='left'>
+        {/* <Header as='h3' inverted>
          &copy; 2021 by VKM Studio / Krzysztof Meyer 
-        </Header>
-        <p>
-          If you are interested of my services, you can contact me at: <br />
-          <a href='mailto:vkmstudiox@gmail.com' className="link-white">VKMStudioX@gmail.com</a> or
-          <a href='mailto:meact@wp.pl' className="link-white">meact@wp.pl</a>,<br/>
-          {/* <a href='http://facebook.com/vkmstudiox/'>fb.com/VKMStudioX</a><br/> */}
-          {/* or try the form from Contact section. */}
-        </p>
+        </Header> */}
+        <div class="Words">
+  <div class="Words-line">
+    <p>&nbsp;</p>
+    <p>Maybe you</p>
+  </div>
+  <div class="Words-line">
+    <p>Maybe you</p>
+    <p>want to</p>
+  </div>
+  <div class="Words-line">
+    <p>want to</p>
+    <p>help me</p>
+  </div>
+  <div class="Words-line">
+    <p>help me</p>
+    <p>realize</p>
+  </div>
+  <div class="Words-line">
+    <p>realize</p>
+    <p>my dreams?</p>
+  </div>
+  <div class="Words-line">
+    <p>my dreams?</p>
+    <p>&nbsp;</p>
+  </div>
+</div>
+
+
       </Grid.Column>
 
     </Grid.Row>

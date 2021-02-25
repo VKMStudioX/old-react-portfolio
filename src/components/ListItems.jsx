@@ -8,7 +8,7 @@ const ListItems = ({ListItemsProps}) => {
     const itemsList = ListItemsPropsIcons.map((item) => {
         return (
           <>
-            <List.Item key={item.listHeader}>
+            <List.Item key={item.listHeader} className="no-pointer">
             <Icon name={item.listIcon} size='huge' />
             <List.Content>
               <List.Header>{item.listHeader}</List.Header>

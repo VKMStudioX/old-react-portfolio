@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { StoreContext } from '../Store/StoreProvider';
 import { Grid, Segment, Icon, List, Header, Divider } from 'semantic-ui-react';
-// import ContactForm  from '../components/ContactForm'
+import ContactForm  from '../components/ContactForm'
 import ListItems from '../components/ListItems'
 
 
@@ -24,12 +24,21 @@ const Contact = () => {
           <Grid.Row>
             <Divider horizontal inverted>Contact</Divider>  
               <List inverted className='listColor' animated celled selection size="big">
-                <ListItems ListItemsProps={contact}  />
+                {/* <ListItems ListItemsProps={contact}  /> */}
+                <List.Item>
+            <Icon name={contact.listIcons[0].listIcon} size='huge' className='no-pointer'/>
+            <List.Content>
+              <List.Header className='link-white'><a href='mailto:vkmstudiox@gmail.com' className='link-white'>{contact.listIcons[0].listHeader}</a></List.Header>
+              <List.Description>
+              {contact.listIcons[0].listDescr}
+              </List.Description>
+            </List.Content>
+          </List.Item>
               </List>
           </Grid.Row>
         </Grid.Column>
       </Grid.Row>
-{/* 
+
       <Grid.Row>
         <Grid.Column widescreen={13}>
           <Grid.Row divided>
@@ -43,7 +52,7 @@ const Contact = () => {
                 <ContactForm />
           </Grid.Row>
         </Grid.Column>    
-      </Grid.Row>  */}
+      </Grid.Row> 
     </Grid>
   </>
       )

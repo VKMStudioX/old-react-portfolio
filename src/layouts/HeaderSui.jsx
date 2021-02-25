@@ -80,7 +80,7 @@ const MenuHeader = (
   <Grid.Column only='wideScreen largeScreen computer'>
     <Segment color={menuColor} inverted padded='vertical'>
     <Header as='h1'>
-    <Header.Content className="header-km"><i>Krzysztof Meyer - Portfolio</i></Header.Content>
+    <Header.Content className="header-km"><i>Krzysztof Meyer<br/> Automation and robotics engineer &amp; Web developer</i></Header.Content>
   </Header> 
     </Segment>
   </Grid.Column>

@@ -52,7 +52,7 @@ const App = () =>  {
       <>
       <StoreProvider>
         <Router>
-        <ScrollToTop>
+        {/* <ScrollToTop> */}
         <Segment className='background' padded={false}> 
         <HeaderSui />
 
@@ -78,7 +78,7 @@ const App = () =>  {
           <ScrollTopArrow />
           <FooterSui/>
           </Segment>
-        </ScrollToTop>
+        {/* </ScrollToTop> */}
         </Router>
       </StoreProvider>
             </>
