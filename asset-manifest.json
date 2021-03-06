@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.bd79964f.chunk.css",
+    "main.css": "/static/css/main.547dd323.chunk.css",
     "main.js": "/static/js/main.0d87689c.chunk.js",
     "main.js.map": "/static/js/main.0d87689c.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.3d7165fc.js",
@@ -10,7 +10,7 @@
     "static/js/2.0b7aebb2.chunk.js.map": "/static/js/2.0b7aebb2.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.a004bb58.chunk.css.map": "/static/css/2.a004bb58.chunk.css.map",
-    "static/css/main.bd79964f.chunk.css.map": "/static/css/main.bd79964f.chunk.css.map",
+    "static/css/main.547dd323.chunk.css.map": "/static/css/main.547dd323.chunk.css.map",
     "static/js/2.0b7aebb2.chunk.js.LICENSE.txt": "/static/js/2.0b7aebb2.chunk.js.LICENSE.txt",
     "static/media/index.css": "/static/media/FTY-STRATEGYCIDE-NCV.60b3a879.otf",
     "static/media/VKM_logo_v5.82290a6d.png": "/static/media/VKM_logo_v5.82290a6d.png",
@@ -43,7 +43,7 @@
     "static/js/runtime-main.3d7165fc.js",
     "static/css/2.a004bb58.chunk.css",
     "static/js/2.0b7aebb2.chunk.js",
-    "static/css/main.bd79964f.chunk.css",
+    "static/css/main.547dd323.chunk.css",
     "static/js/main.0d87689c.chunk.js"
   ]
 }
